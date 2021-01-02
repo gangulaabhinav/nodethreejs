@@ -9,6 +9,11 @@ const port = process.env.PORT || 1337
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
+// to get three.js scripts
+app.get('/scripts/three.js', (req, res) => {
+    res.sendFile(__dirname + '/node_modules/three/build/three.js');
+});
+
 // Support get request for home page
 app.get('/', (req, res) => {
     res.render('index', {title:'Pug'})

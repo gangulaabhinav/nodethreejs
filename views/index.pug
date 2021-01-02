@@ -1,4 +1,34 @@
 extends layout
 
 block content
-    h1 Node.js Express app using Pug view engine
+    canvas(id='myCanvas')
+    script(src='/scripts/three.js')
+    script.
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("myCanvas") })
+        renderer.setClearColor(0x00ff00)
+        renderer.setPixelRatio(window.devicePixelRatio)
+        renderer.setSize(window.innerWidth, window.innerHeight)
+
+        const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000)
+
+        const scene = new THREE.Scene()
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+        scene.add(ambientLight)
+        const pointLight = new THREE.PointLight(0xffffff, 0.5)
+        scene.add(pointLight)
+
+        const geometry = new THREE.BoxGeometry(100, 100, 100)
+        const material = new THREE.MeshLambertMaterial({color: 0xf3fff3})
+        const mesh = new THREE.Mesh(geometry, material)
+        mesh.position.set(0, 0, -1000)
+        scene.add(mesh)
+
+        requestAnimationFrame(render)
+
+        function render() {
+            mesh.rotation.x += 0.02
+            mesh.rotation.y += 0.02
+            renderer.render(scene, camera)
+            requestAnimationFrame(render)
+        }
