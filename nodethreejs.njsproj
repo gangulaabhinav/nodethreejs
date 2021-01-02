@@ -29,10 +29,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="server.js" />
+    <Content Include="views\index.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\layout.pug">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
