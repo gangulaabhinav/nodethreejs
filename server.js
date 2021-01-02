@@ -1,8 +1,15 @@
-'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
+'use strict'
+const express = require('express')
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+const app = express()
+const port = process.env.PORT || 1337
+
+// Support get request for home page
+app.get('/', (req, res) => {
+    res.send('Hello Express')
+})
+
+// Start listening to app requests
+app.listen(port, () => {
+    console.log('Started server on port ' + port)
+})
