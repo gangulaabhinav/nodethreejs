@@ -30,6 +30,9 @@
   <ItemGroup>
     <Content Include="scripts\cube.js" />
     <Content Include="server.js" />
+    <Content Include="styles\style.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\index.pug">
       <SubType>Code</SubType>
     </Content>
@@ -42,6 +45,7 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="styles\" />
     <Folder Include="scripts\" />
     <Folder Include="views\" />
   </ItemGroup>

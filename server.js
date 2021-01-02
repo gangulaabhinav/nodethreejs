@@ -6,6 +6,7 @@ const app = express()
 const port = process.env.PORT || 1337
 
 // Use static resources in scripts folder
+app.use('/styles', express.static(path.join(__dirname, 'styles')))
 app.use('/scripts', express.static(path.join(__dirname, 'scripts')))
 app.use('/three', express.static(path.join(__dirname, '/node_modules/three/build')))
 
