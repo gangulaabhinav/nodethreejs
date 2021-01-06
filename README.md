@@ -15,7 +15,10 @@ Sample Node and Three.js app
 
 # CSS Coding Guidelines
 
-# Additional Dependency for C++ Addon
-Need to set python path required for the script npm run build (node-gyp rebuild)
-Eg: npm config set python "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe"
-node-gyp also needs Visual Studio c++ development workload as it generates C++ vcxproj for the build
+# cppaddon (Node.js C++ Addon)
+Build instructions
+1. node-gyp also needs Visual Studio c++ development workload as it generates C++ vcxproj for the build
+2. Need to set python path required for the script npm run build (node-gyp rebuild). Eg: npm config set python "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe". Reference : https://www.npmjs.com/package/node-gyp
+3. Run "npm run build" to generate the C++ addon in the build folder.
+4. Copy cppaddon.node file from ./build/Release folder to the root folder (folder containing server.js file)
+5. Consume it in javascript

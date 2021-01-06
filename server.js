@@ -1,6 +1,7 @@
 'use strict'
 const express = require('express')
 const path = require('path')
+const cppAddon = require('./cppaddon.node');
 
 const app = express()
 const port = process.env.PORT || 1337
@@ -16,7 +17,12 @@ app.set('view engine', 'pug')
 
 // Support get request for home page
 app.get('/', (req, res) => {
-    res.render('index', {title:'Cube'})
+    res.render('index', { title: 'Cube' })
+})
+
+// send response from C++ addon
+app.get('/cppaddon', (req, res) => {
+    res.send(cppAddon.Hello())
 })
 
 // Start listening to app requests
