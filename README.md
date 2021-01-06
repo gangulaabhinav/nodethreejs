@@ -14,3 +14,8 @@ Sample Node and Three.js app
 1. Avoid writing long scripts in pug. Move it to a separate js file.
 
 # CSS Coding Guidelines
+
+# Additional Dependency for C++ Addon
+Need to set python path required for the script npm run build (node-gyp rebuild)
+Eg: npm config set python "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe"
+node-gyp also needs Visual Studio c++ development workload as it generates C++ vcxproj for the build
