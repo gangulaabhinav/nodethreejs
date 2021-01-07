@@ -2,9 +2,11 @@
   "name": "nodethreejs",
   "version": "0.0.0",
   "description": "nodethreejs",
-  "gypfile": true,
+  "gypfile": false,
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "build": "node-gyp rebuild",
+    "clean": "node-gyp clean"
   },
   "engines": {
     "node": "~14.15.x"
