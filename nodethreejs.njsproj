@@ -29,8 +29,6 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="binding.gyp" />
-    <Content Include="main.cpp" />
     <Content Include="scripts\cube.js" />
     <Content Include="server.js" />
     <Content Include="styles\style.css">
