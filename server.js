@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 // send response from C++ addon
 app.get('/cppaddon', (req, res) => {
-    res.send(cppAddon.Hello() + 'Node Version:' + process.versions.node)
+    res.send(cppAddon.Hello() + ' Node Version:' + process.versions.node)
 })
 
 // Start listening to app requests
